@@ -1,0 +1,26 @@
+{
+  "name": "gh-pages-webpack-plugin",
+  "version": "1.0.0",
+  "description": "gh-pages webpack plugin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamcco/gh-pages-webpack-plugin.git"
+  },
+  "keywords": [
+    "gh-pages",
+    "webpack"
+  ],
+  "bugs": {
+    "url": "https://github.com/iamcco/gh-pages-webpack-plugin/issues"
+  },
+  "homepage": "https://github.com/iamcco/gh-pages-webpack-plugin#readme",
+  "author": "年糕小豆汤 <ooiss@qq.com>",
+  "license": "ISC",
+  "dependencies": {
+    "gh-pages": "^0.11.0"
+  }
+}
