@@ -1,4 +1,3 @@
-'use strict';
 
 var ghPages = require('gh-pages');
 var path = require('path');
@@ -10,6 +9,7 @@ function isAbsolute(dir) {
 }
 
 function GhPagesWebpackPlugin(options) {
+    // must has path params in options
     this.options = options;
     if(!options.path) {
         throw new Error('gh-pages-webpack-plugin must pass the path params');
@@ -23,19 +23,29 @@ function GhPagesWebpackPlugin(options) {
 GhPagesWebpackPlugin.prototype.apply = function(compiler, callback) {
     var _this = this, dist = _this.options.path;
 
+    // after the data has been created then publish
     compiler.plugin('after-emit', function(complation, callback) {
 
+        // continue the webpack progress
+        callback();
+
+        // get absolute path if it's relative path
         if(!isAbsolute(dist)) {
             dist = path.join(this.options.context, dist);
         }
 
+        console.log('\n' + dist + ' is being publish');
+
+        // publish
         ghPages.publish(dist, _this.options.options, function(err) {
             if(err) {
                 throw err;
+            } else {
+                console.log(dist + ' has been published');
             }
+
         });
 
-        callback();
     });
 };
 
