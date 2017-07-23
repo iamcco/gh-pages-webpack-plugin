@@ -21,6 +21,6 @@
   "author": "年糕小豆汤 <ooiss@qq.com>",
   "license": "ISC",
   "dependencies": {
-    "gh-pages": "^0.11.0"
+    "gh-pages": "^1.0.0"
   }
 }
